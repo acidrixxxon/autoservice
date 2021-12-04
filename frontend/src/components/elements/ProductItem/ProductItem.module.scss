@@ -1,0 +1,153 @@
+.product__item {
+  max-width: 260px;
+  flex-basis: 31%;
+  margin: 0 5px 10px;
+
+  .product__image {
+    img {
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  .product__header {
+    padding: 13px;
+
+    .product__alts {
+      display: flex;
+      margin-bottom: 5px;
+
+      span {
+        display: block;
+        padding: 3px 8px;
+        border-radius: 2px;
+        font-family: 'Open Sans';
+        font-size: 9px;
+        font-weight: 500;
+        color: #fff;
+        text-transform: uppercase;
+        margin-right: 4px;
+      }
+      .product__condition {
+        background: #c4c4c4;
+      }
+
+      .product__category {
+        background: #ff6b00;
+      }
+
+      .product__sz {
+        font-size: 20px;
+      }
+    }
+
+    .product__name {
+      color: #494949;
+      font-family: Open Sans;
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 700;
+
+      .product__title {
+      }
+
+      .product__divider {
+        margin: 0 7px;
+      }
+
+      .product__year {
+      }
+    }
+
+    .product__milage {
+      font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 15px;
+    }
+  }
+
+  .product__body {
+    padding: 13px;
+    background: #f1f4f8;
+
+    .product__priceBlock {
+      .product__mainPrice {
+        display: flex;
+        flex-direction: column;
+
+        .product__priceText {
+          text-transform: uppercase;
+          color: #606060;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 9px;
+        }
+
+        .product__priceNumber {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 26px;
+          color: #333;
+        }
+      }
+    }
+
+    .product__iconsBlock {
+      margin: 10px 0;
+      .product__iconsList {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        .product__iconsItem {
+          width: 36px;
+          height: 36px;
+          margin-right: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: #fff;
+          cursor: pointer;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .product__checkBtn {
+      background: #3e3eac;
+      color: #fff;
+      border: none;
+      padding: 17px;
+      width: 100%;
+      margin: 10px 0;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .product__signBtn {
+      width: 100%;
+      background: #ffffff;
+      font-family: Open Sans;
+      color: #494949;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 2px;
+      border: 1px solid #ebebeb;
+    }
+  }
+}

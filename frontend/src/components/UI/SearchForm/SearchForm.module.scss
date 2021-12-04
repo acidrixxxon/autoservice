@@ -1,0 +1,38 @@
+.searchForm {
+  display: flex;
+  align-items: center;
+
+  input {
+    background: #f1f4f8;
+    padding: 10px 15px;
+    width: 270px;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    outline: none;
+    border: none;
+    border-radius: 2px 0px 0px 2px;
+  }
+
+  button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #272727;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    color: #fff;
+    border-radius: 0px 2px 2px 0px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+}
