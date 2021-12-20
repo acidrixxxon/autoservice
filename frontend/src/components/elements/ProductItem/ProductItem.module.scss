@@ -48,14 +48,18 @@
       font-style: normal;
       font-weight: 700;
 
-      .product__title {
-      }
+      a {
+        text-decoration: none;
+        color: #494949;
+        .product__title {
+        }
 
-      .product__divider {
-        margin: 0 7px;
-      }
+        .product__divider {
+          margin: 0 7px;
+        }
 
-      .product__year {
+        .product__year {
+        }
       }
     }
 

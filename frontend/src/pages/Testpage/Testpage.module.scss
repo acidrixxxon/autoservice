@@ -1,0 +1,112 @@
+.container {
+  padding: 40px 0;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.productPage__imageGallery__block {
+  max-width: 700px;
+  width: 100%;
+
+  .imageGallery__topSlider {
+    position: relative;
+
+    .imageGallery__topSlider__leftArrow,
+    .imageGallery__topSlider__rightArrow {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.2s linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .imageGallery__topSlider__leftArrow {
+      left: 10px;
+      top: 50%;
+    }
+
+    .imageGallery__topSlider__rightArrow {
+      right: 15px;
+      top: 50%;
+    }
+
+    .imageGallery__topSlider__item {
+      list-style: none;
+
+      .imageGallery__topSlider__image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .imageGallery__bottomSlider {
+    position: relative;
+    .bottomSlider__leftArrow,
+    .bottomSlider__rightArrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.2s linear;
+      z-index: 1;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .bottomSlider__leftArrow {
+      left: 15px;
+    }
+
+    .bottomSlider__rightArrow {
+      right: 15px;
+    }
+
+    .bottomSlider__track {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+
+      .bottomSlider__item {
+        min-width: 32%;
+        height: 150px;
+        list-style: none;
+        display: block;
+        margin-left: 10px;
+        transition: all 0.2s linear;
+
+        .bottomSlider__image {
+          width: 100%;
+          height: auto;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './ProductItem.module.scss'
 import product_image from '../../../img/prod1.jpg'
-import classes from 'classnames'
+import { Link } from 'react-router-dom'
 
 const ProductItem = ({ item }) => {
     return (
         <div className={styles.product__item}>
             <div className={styles.product__image}>
-                <img src={product_image} alt="Product image" />
+                <img src={product_image} alt="Productimg" />
             </div>
             <div className={styles.product__header}>
                 <div className={styles.product__alts}>
@@ -15,9 +15,12 @@ const ProductItem = ({ item }) => {
                     <span className={styles.product__category}>ADVANTAGE</span>
                 </div>
                 <div className={styles.product__name}>
-                    <span className={styles.product__title}>{item.mark} {item.model}</span>
-                    <span className={styles.product__divider}>/</span>
-                    <span className={styles.product__year}>{item.year}</span>
+                    <Link to={`/product/${item.id}`}>
+                        <span className={styles.product__title}>{item.mark} {item.model}</span>
+                        <span className={styles.product__divider}>/</span>
+                        <span className={styles.product__year}>{item.year}</span>
+                    </Link>
+ 
                 </div>
                 <div className={styles.product__milage}>
                     Пробег: {item.mileage}км.

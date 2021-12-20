@@ -3,35 +3,18 @@ import styles from './Catalog.module.scss'
 import { Link } from 'react-router-dom'
 import Sidefilters from '../../components/elements/Sidefilters/Sidefilters'
 import Products from '../../components/elements/Products/Products'
-import { products1 } from '../../MOCK_DATA'
 import SearchForm from '../../components/UI/SearchForm/SearchForm'
 import { CSSTransition } from 'react-transition-group'
 
 const CatalogPage = () => {
     const [ showSideFilters,setShowFilters ] = React.useState(true)
     const [ searchQuery ,setSearchQuery ] = React.useState('')
-    const [ productsPerPage,setProductsPerPage ] = React.useState(6)
-    const [ currentPage,setCurrentPage ] = React.useState(1)
-    const [ products,setProducts ] = React.useState(products1)
 
     const toggleSideFilters = () => {
         setShowFilters(!showSideFilters)
     }
 
-    let dataSearch = products.filter(item => {
-        return Object.keys(item).some(key => (
-            item[key].toString().toLowerCase().includes(searchQuery.toString().toLowerCase())
-        ))
-    })
-
-    // pagination settings
-    const lastProductIndex = currentPage * productsPerPage
-    const firstProductIndex = lastProductIndex - productsPerPage
-    const currentProducts = dataSearch.slice(firstProductIndex,lastProductIndex)
     
-    const paginate = pageNumber => setCurrentPage(pageNumber)
-    
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -75,7 +58,6 @@ const CatalogPage = () => {
                  </div>
 
                  <div className={styles.main__block}>
-                     {/* {showSideFilters && <Sidefilters showSideFilters={showSideFilters} />} */}
                      <CSSTransition         
                         in={showSideFilters}
                         timeout={300}
@@ -91,12 +73,7 @@ const CatalogPage = () => {
                     </CSSTransition>
 
                      <div className={styles.main__content}>
-                        <Products 
-                            productsCount={products.length}
-                            products={currentProducts} 
-                            productsPerPage={productsPerPage} 
-                            currentPage={currentPage} 
-                            paginate={paginate} />
+                        <Products />
                      </div>
                  </div>
             </div>

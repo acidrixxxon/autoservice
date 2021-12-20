@@ -1,31 +1,63 @@
 import React from 'react'
 import ProductItem from '../ProductItem/ProductItem'
 import styles from './Products.module.scss'
+import { useDispatch,useSelector } from 'react-redux'
+import { products2 } from '../../../MOCK_DATA'
+import Spinner from '../../UI/Spinner/Spinner'
 
-const Products = ({ products,productsPerPage,currentPage,paginate,productsCount }) => {
+
+const Products = ( ) => {
+    const dispatch = useDispatch()
+    const { products } = useSelector(state => state)
+    const { allProducts,loading,currentPage,productsPerPage } = products
     const pageNumbers = []
-    const lastPage = Math.ceil(productsCount/productsPerPage)
 
-    for(let i=1; i<= lastPage; i++) {
+        
+    const lastProductIndex = currentPage * productsPerPage;
+    const firstProductIndex = lastProductIndex - productsPerPage;
+
+    const activeProducts = allProducts.splice(firstProductIndex,lastProductIndex)
+    console.log(activeProducts)
+    for(let i=1; i<= Math.ceil(allProducts.length / productsPerPage); i++) {
         pageNumbers.push(i)
     }
     const onNextPage = (pageNumber) => {
-        if( pageNumber > lastPage ) {
-            paginate(1)
-        } else {
-            paginate(pageNumber)
-        }
+        // if( pageNumber > lastPage ) {
+        //     paginate(1)
+        // } else {
+        //     paginate(pageNumber)
+        // }
+    }
+    const paginate = (page_number) => {
+        dispatch({
+            type: 'SET_CURRENT_PAGE',
+            payload: page_number
+        })
     }
 
     const onPrevPage = (pageNumber) => {
-        console.log(currentPage)
-        if (pageNumber <= 0 ) {
-            paginate(lastPage)
-        } else {
-            paginate(pageNumber)
-        }
+        // console.log(currentPage)
+        // if (pageNumber <= 0 ) {
+        //     paginate(lastPage)
+        // } else {
+        //     paginate(pageNumber)
+        // }
     }
 
+    React.useEffect(() => {
+        dispatch({
+            type: 'GET_ALLPRODUCTS_LOADING'
+        })
+
+        setTimeout(() => {
+            dispatch({
+                type: 'GET_ALLPRODUCTS_SUCCESS',
+                payload: products2
+            })
+        },1000)
+    },[dispatch])
+
+    if ( loading ) return (<Spinner />)
     return (
         <div className={styles.products__container}>
             <div className={styles.products__topBlock}>
@@ -40,7 +72,7 @@ const Products = ({ products,productsPerPage,currentPage,paginate,productsCount 
                     {pageNumbers.map(item => (
                         <span 
                             key={item}
-                            className={currentPage == Number(item) ? [styles.products__pagLink,styles.activeLink].join(' ') : styles.products__pagLink}
+                            className={currentPage === Number(item) ? [styles.products__pagLink,styles.activeLink].join(' ') : styles.products__pagLink}
                             onClick={() => paginate(Number(item))}>
                                 {item}
                         </span>
@@ -63,8 +95,8 @@ const Products = ({ products,productsPerPage,currentPage,paginate,productsCount 
                 </div>
             </div>
             <div className={styles.products__catalog}>
-                {products.length > 0 ? products.map(item => (
-                    <ProductItem item={item}/>
+                {activeProducts.length > 0 ? activeProducts.map(item => (
+                    <ProductItem item={item} key={item.id}/>
                 )): <span>Товар не найден!</span>}
                 
             </div>

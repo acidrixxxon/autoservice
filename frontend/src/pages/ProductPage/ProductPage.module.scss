@@ -1,0 +1,543 @@
+.productPage {
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  .container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    .productPage__navlinks__block {
+      margin-bottom: 70px;
+      .navlinks__list {
+        display: flex;
+        .navlinks__divider {
+          margin: 0 12px;
+        }
+        .navlinks__item {
+          color: #333;
+          list-style: none;
+
+          a {
+            color: #333;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .productPage__prodtitle__block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+
+      .prodtitle__text {
+        font-family: Montserrat;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 49px;
+        margin-right: 20px;
+      }
+
+      .prodtitle__tag {
+        background-color: #ff6b00;
+        color: #fff;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 19px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        padding: 5px 12px;
+        border-radius: 3px;
+      }
+    }
+
+    section {
+      display: flex;
+      justify-content: space-between;
+
+      .mainBlock {
+        max-width: 700px;
+        width: 100%;
+        margin-right: 30px;
+
+        .mainBlock__slider {
+          margin-bottom: 25px;
+
+          .slider__topSlider {
+            position: relative;
+
+            .topSlider__leftArrow,
+            .topSlider__rightArrow {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              background: #fff;
+              width: 25px;
+              height: 25px;
+              cursor: pointer;
+              opacity: 0.5;
+              transition: opacity 0.2s linear;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+
+            .topSlider__leftArrow {
+              left: 10px;
+              top: 50%;
+            }
+
+            .topSlider__rightArrow {
+              right: 15px;
+              top: 50%;
+            }
+
+            .topSlider__item {
+              list-style: none;
+              max-width: 940px;
+
+              .topSlider__image {
+                width: 100%;
+                height: auto;
+              }
+            }
+          }
+
+          .slider__bottomSlider {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            .bottomSlider__leftArrow,
+            .bottomSlider__rightArrow {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              background: #fff;
+              width: 25px;
+              height: 25px;
+              cursor: pointer;
+              opacity: 0.5;
+              transition: opacity 0.2s linear;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+
+            .bottomSlider__leftArrow {
+              left: 10px;
+              top: 20px;
+            }
+
+            .bottomSlider__rightArrow {
+              right: 15px;
+              top: 20px;
+            }
+
+            .bottomSlider__item {
+              width: 24%;
+              height: 160px;
+              list-style: none;
+              cursor: pointer;
+
+              img {
+                max-width: 100%;
+                height: auto;
+              }
+            }
+          }
+        }
+
+        .mainBlock__specificationsBlock {
+          margin-bottom: 50px;
+          .specificationsBlock__title {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 37px;
+            color: #000000;
+            margin-bottom: 25px;
+          }
+
+          .specificationsBlock__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .specificationsBlock__item {
+              font-family: Monseratt;
+              list-style: none;
+              width: 200px;
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 15px;
+              font-size: 15px;
+
+              .specificationsBlock__name {
+                color: #000000;
+                font-weight: 500;
+              }
+
+              .specificationsBlock__value {
+                color: #3e3eac;
+              }
+            }
+          }
+        }
+
+        .mainBlock__tradeInBlock {
+          padding: 25px 30px;
+          margin-bottom: 50px;
+          background: linear-gradient(
+              90deg,
+              #d5edff 0%,
+              #d4edff 42.31%,
+              rgba(212, 237, 255, 0) 75.42%
+            ),
+            url('http://localhost:3000/images/tradeIn_bg.png') no-repeat right;
+
+          .tradeInBlock__title {
+            display: block;
+            max-width: 400px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 44px;
+            color: #000000;
+            margin-bottom: 22px;
+          }
+
+          .tradeInBlock__button {
+            width: 300px;
+            padding: 15px 0;
+            border: 2px solid #4f4f4f;
+            border-radius: 4px;
+            font-family: 'Open Sans';
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+            color: #000000;
+            cursor: pointer;
+          }
+        }
+
+        .mainBlock__reviewsBlock {
+          margin-bottom: 50px;
+
+          .reviewsBlock__title {
+            margin-bottom: 30px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 37px;
+            color: #000000;
+          }
+
+          .reviewsBlock__reviewsList {
+            margin-bottom: 30px;
+            display: flex;
+
+            .reviewsBlock__reviewsItem {
+              list-style: none;
+              max-width: 255px;
+              margin-right: 15px;
+
+              .reviewsItem__header {
+                display: flex;
+                margin-bottom: 13px;
+
+                .reviewsItem__authorPhoto {
+                  margin-right: 10px;
+
+                  img {
+                    width: 98px;
+                    height: 98px;
+                    object-fit: cover;
+                  }
+                }
+
+                .reviewsItem__authorInfo {
+                  display: flex;
+                  flex-direction: column;
+
+                  .authorInfo__name {
+                    margin-top: 10px;
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: #000000;
+                    margin-bottom: 3px;
+                  }
+
+                  .authorInfo__rang {
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #9b9b9b;
+                    margin-bottom: 13px;
+                  }
+
+                  .authorInfo__rating {
+                    display: flex;
+
+                    li {
+                      list-style: none;
+                    }
+                  }
+                }
+              }
+
+              .reviewsItem__body {
+                .reviewsItem__reviewText {
+                  height: 145px;
+                  margin-bottom: 13px;
+                  white-space: wrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+
+                .reviewsItem__date {
+                  font-family: Montserrat;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 14px;
+                  line-height: 17px;
+                  color: #9b9b9b;
+                }
+              }
+            }
+          }
+
+          .reviewsBlock__readAllReviews {
+            background-color: #3e3eac;
+            color: #fff;
+            border-radius: 2px;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+            width: 250px;
+            border: none;
+            padding: 10px 0;
+            cursor: pointer;
+
+            svg {
+              margin-left: 10px;
+              vertical-align: middle;
+            }
+          }
+        }
+
+        .mainBlock__recommendationsBlock {
+          .recommendationsBlock__title {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 37px;
+            color: #000000;
+            margin-bottom: 20px;
+          }
+
+          .recommendationsBlock__recList {
+            display: flex;
+
+            .recommendationsBlock__recItem {
+              list-style: none;
+              max-width: 360px;
+              margin-right: 25px;
+
+              &:hover {
+                cursor: pointer;
+              }
+              img {
+                width: 100%;
+                height: 200px;
+                transition: transform 0.35s ease-in-out;
+
+                &:hover {
+                  transform: scale(1.05);
+                }
+              }
+
+              .recItem__body {
+                padding: 15px;
+                border: 1px solid #ebebeb;
+                border-top: none;
+
+                .recItem__tags {
+                  margin-bottom: 7px;
+
+                  .recItem__tag {
+                    background: #b4b4b4;
+                    padding: 3px 7px;
+                    font-family: Open Sans;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 9px;
+                    line-height: 12px;
+                    text-transform: uppercase;
+                    color: #ffffff;
+                    margin-right: 4px;
+                    border-radius: 2px;
+
+                    &:last-child {
+                      background: #ff6b00;
+                    }
+                  }
+                }
+
+                .recItem__name {
+                  font-family: Open Sans;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 19px;
+                  line-height: 26px;
+                  color: #494949;
+                }
+
+                .recItem__mileage {
+                  font-family: Montserrat;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 12px;
+                  line-height: 15px;
+                  color: #494949;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .sideBlock {
+        width: 100%;
+        max-width: 350px;
+
+        .sideBlock__priceBlock {
+          width: 100%;
+          border-radius: 6px;
+          background: #f1f4f8;
+          padding: 25px 27px;
+
+          .priceBlock__title {
+            font-family: Montserrat;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px;
+            margin-bottom: 15px;
+          }
+
+          .priceBlock__discounts {
+            color: #8d8d8d;
+            display: flex;
+            margin-bottom: 34px;
+
+            .priceBlock__oldPrice,
+            .priceBlock__benefit,
+            .priceBlock__availability {
+              margin-right: 22px;
+            }
+
+            span {
+              display: block;
+            }
+
+            .priceBlock__oldPrice {
+              .priceBlock__oldPriceValue {
+                text-decoration: line-through;
+              }
+            }
+
+            .priceBlock__benefit {
+              .priceBlock__benefitValue {
+                color: #ff6b00;
+              }
+            }
+
+            .priceBlock__availability {
+              .priceBlock__availabilityValue {
+                color: #494949;
+              }
+            }
+          }
+
+          .priceBlock__prePrice {
+            margin-bottom: 25px;
+
+            .prePrice__text {
+              color: #8d8d8d;
+              font-family: Montserrat;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 18px;
+            }
+
+            .prePrice__value {
+              font-family: Montserrat;
+              font-style: normal;
+              font-size: 30px;
+              line-height: 37px;
+              color: #000000;
+            }
+          }
+
+          .priceBlock__buttons {
+            display: flex;
+            .priceBlock__button {
+              padding: 13px 0;
+              text-align: center;
+              width: 195px;
+              cursor: pointer;
+              color: #fff;
+              font-family: Open Sans;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 17px;
+              text-align: center;
+              letter-spacing: 0.03em;
+              text-transform: uppercase;
+              border: none;
+              border-radius: 6px;
+              transition: opacity 0.1s linear;
+
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+
+            .priceBlock__buttonReserv {
+              background-color: #3e3eac;
+              margin-right: 10px;
+            }
+
+            .priceBlock__buttonTestdrive {
+              background-color: #da9a1d;
+            }
+          }
+        }
+      }
+    }
+  }
+}

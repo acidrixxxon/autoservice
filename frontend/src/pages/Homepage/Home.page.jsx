@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/elements/Header/Header'
 import styles from './Home.module.scss'
 import Button from '../../components/UI/button/Button'
 
