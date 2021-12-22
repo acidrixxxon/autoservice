@@ -1,0 +1,44 @@
+.pagination {
+  display: flex;
+  align-items: center;
+
+  .pagination__prevButton,
+  .pagination__nextButton {
+    border: 1px solid #c2c4c8;
+    background-color: inherit;
+    padding: 7px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .pagination__prevButton {
+    margin-right: 4px;
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .pagination__nextButton {
+    margin-left: 4px;
+    svg {
+      margin-left: 5px;
+    }
+  }
+
+  .pagination__link {
+    padding: 5px 10px;
+    border: 1px solid #f1f1f1;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: 0.1s all linear;
+
+    &:hover {
+      border: 1px solid #c2c4c8;
+    }
+  }
+
+  .pagination__link.activeLink {
+    border: 1px solid #c2c4c8;
+  }
+}

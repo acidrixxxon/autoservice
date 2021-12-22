@@ -3,51 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .products__pagination {
-      display: flex;
-      align-items: center;
-
-      .products__pagBtnPrev,
-      .products__pagBtnNext {
-        border: 1px solid #c2c4c8;
-        background-color: inherit;
-        padding: 7px 16px;
-        cursor: pointer;
-      }
-
-      .products__pagBtnPrev {
-        display: flex;
-        align-items: center;
-        margin-right: 4px;
-        svg {
-          margin-right: 5px;
-        }
-      }
-
-      .products__pagBtnNext {
-        display: flex;
-        align-items: center;
-        margin-left: 4px;
-        svg {
-          margin-left: 5px;
-        }
-      }
-
-      .products__pagLink.activeLink {
-        border: 1px solid #c2c4c8;
-      }
-      .products__pagLink {
-        padding: 5px 10px;
-        border: 1px solid #f1f1f1;
-        margin: 0 2px;
-        cursor: pointer;
-        transition: 0.1s all linear;
-
-        &:hover {
-          border: 1px solid #c2c4c8;
-        }
-      }
-    }
 
     .products__sort {
       .sort__button {
