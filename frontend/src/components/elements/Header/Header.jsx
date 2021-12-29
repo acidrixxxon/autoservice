@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom'
 const Header = () => {
     const location = useLocation()
     const [showNav,setShowNav ] = React.useState(false)
-    console.log(showNav)
     
     return (
         <div className={styles.header}>

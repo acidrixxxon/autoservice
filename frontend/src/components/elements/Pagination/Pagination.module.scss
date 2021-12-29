@@ -1,28 +1,53 @@
+@import '../../../variables.scss';
+
 .pagination {
   display: flex;
   align-items: center;
 
   .pagination__prevButton,
   .pagination__nextButton {
-    border: 1px solid #c2c4c8;
+    border: 1px solid #f1f1f1;
     background-color: inherit;
     padding: 7px 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    transition: border 0.3s ease-in-out;
+
+    &:hover {
+      border: 1px solid #c2c4c8;
+    }
+
+    @media screen and (max-width: $tabletScreen) {
+      padding: 10px;
+    }
   }
 
   .pagination__prevButton {
     margin-right: 4px;
+
     svg {
       margin-right: 5px;
+    }
+
+    .pagination__prevButtonText {
+      @media screen and (max-width: $tabletScreen) {
+        display: none;
+      }
     }
   }
 
   .pagination__nextButton {
     margin-left: 4px;
+
     svg {
       margin-left: 5px;
+    }
+
+    .pagination__nextButtonText {
+      @media screen and (max-width: $tabletScreen) {
+        display: none;
+      }
     }
   }
 
@@ -31,7 +56,7 @@
     border: 1px solid #f1f1f1;
     margin: 0 2px;
     cursor: pointer;
-    transition: 0.1s all linear;
+    transition: border 0.3s ease-in-out;
 
     &:hover {
       border: 1px solid #c2c4c8;

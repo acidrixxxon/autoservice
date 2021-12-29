@@ -1,6 +1,11 @@
 import axios from 'axios';
+import {
+  SEARCH__PRODUCT_ERROR,
+  SEARCH__PRODUCT_REQUEST,
+  SEARCH__PRODUCT_SUCCESS,
+} from '../constants/ProductConstans';
 
-export const getProducts = (page = 2, limit = 10) => {
+export const getProducts = (page = 1, limit = 10) => {
   return async (dispatch) => {
     try {
       dispatch({
@@ -11,7 +16,6 @@ export const getProducts = (page = 2, limit = 10) => {
       const { data } = await axios.get(
         `http://localhost:5000/products?_page=${page}&_limit=${limit}`,
       );
-      console.log(data);
 
       dispatch({
         type: 'SET_PRODUCTS_COUNT',
@@ -30,3 +34,39 @@ export const getProducts = (page = 2, limit = 10) => {
     }
   };
 };
+
+export const searchProducts =
+  (query, page = 1, limit = 6) =>
+  async (dispatch, getState) => {
+    try {
+      const { products } = getState();
+
+      dispatch({
+        type: SEARCH__PRODUCT_REQUEST,
+      });
+
+      const request = await axios.get(`http://localhost:5000/products?mark=${query}`);
+      const productsCount = request.data.length;
+      const { data } = await axios.get(
+        `http://localhost:5000/products?mark=${query}&_page=${page}&_limit=${limit}`,
+      );
+      console.log(data);
+
+      setTimeout(() => {
+        dispatch({
+          type: SEARCH__PRODUCT_SUCCESS,
+          payload: {
+            searchResults: data,
+            productsCount,
+          },
+        });
+      }, 200);
+    } catch (error) {
+      console.log(error);
+
+      dispatch({
+        type: SEARCH__PRODUCT_ERROR,
+        payload: error,
+      });
+    }
+  };

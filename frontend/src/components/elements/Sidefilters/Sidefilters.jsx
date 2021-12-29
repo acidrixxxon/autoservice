@@ -3,7 +3,6 @@ import styles from './Sidefilters.module.scss'
 import SidefiltersItem from './SidefiltersItem'
 
 const Sidefilters = ({showSideFilters}) => {
-    // const [ activeFilter,setActiveFilter ] = React.useState(null)
     const [ filters,setFilters ] = React.useState([
         {
             title: 'Марка',

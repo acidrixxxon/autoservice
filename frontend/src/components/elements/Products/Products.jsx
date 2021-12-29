@@ -39,7 +39,7 @@ const Products = ( ) => {
                         <ProductItem item={item} key={item.id}/>
                     )) }
 
-                    {allProducts.length == 0 && <span>Товар не найден!</span>}
+                    {allProducts.length === 0 && <span>Товар не найден!</span>}
                 </div>
             </div>) }
         </>
