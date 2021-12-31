@@ -35,24 +35,57 @@ export const getProducts = (page = 1, limit = 10) => {
   };
 };
 
+// export const searchProducts =
+//   (query, page = 1, limit = 6) =>
+//   async (dispatch, getState) => {
+//     try {
+//       const { products } = getState();
+
+//       dispatch({
+//         type: SEARCH__PRODUCT_REQUEST,
+//       });
+
+//       const request = await axios.get(`http://localhost:5000/products?mark=${query}`);
+//       const productsCount = request.data.length;
+// const { data } = await axios.get(
+//   `http://localhost:5000/products?mark=${query}&_page=${page}&_limit=${limit}`,
+// );
+// console.log(data);
+
+//       setTimeout(() => {
+//         dispatch({
+//           type: SEARCH__PRODUCT_SUCCESS,
+//           payload: {
+//             searchResults: data,
+//             productsCount,
+//           },
+//         });
+//       }, 200);
+//     } catch (error) {
+//       console.log(error);
+
+//       dispatch({
+//         type: SEARCH__PRODUCT_ERROR,
+//         payload: error,
+//       });
+//     }
+//   };
+
 export const searchProducts =
   (query, page = 1, limit = 6) =>
-  async (dispatch, getState) => {
+  async (dispatch) => {
     try {
-      const { products } = getState();
-
-      dispatch({
-        type: SEARCH__PRODUCT_REQUEST,
-      });
+      dispatch({ type: SEARCH__PRODUCT_REQUEST });
 
       const request = await axios.get(`http://localhost:5000/products?mark=${query}`);
       const productsCount = request.data.length;
+
       const { data } = await axios.get(
         `http://localhost:5000/products?mark=${query}&_page=${page}&_limit=${limit}`,
       );
       console.log(data);
 
-      setTimeout(() => {
+      if (data.length > 0) {
         dispatch({
           type: SEARCH__PRODUCT_SUCCESS,
           payload: {
@@ -60,7 +93,12 @@ export const searchProducts =
             productsCount,
           },
         });
-      }, 200);
+      } else {
+        dispatch({
+          type: SEARCH__PRODUCT_ERROR,
+          payload: 'Товар не найден!',
+        });
+      }
     } catch (error) {
       console.log(error);
 

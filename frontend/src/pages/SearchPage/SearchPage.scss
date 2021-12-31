@@ -1,0 +1,11 @@
+@import '../../assets/mixins.scss';
+
+section#search {
+  .search__container {
+    @include sectionContainer(1080px);
+
+    .search__setts {
+      margin-top: 15px;
+    }
+  }
+}

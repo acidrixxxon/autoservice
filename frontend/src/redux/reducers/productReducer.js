@@ -1,4 +1,5 @@
 import {
+  CLEAR__ERROR,
   SEARCH__PRODUCT_ERROR,
   SEARCH__PRODUCT_REQUEST,
   SEARCH__PRODUCT_SUCCESS,
@@ -75,6 +76,11 @@ export const productReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
+      };
+    case CLEAR__ERROR:
+      return {
+        ...state,
+        error: null,
       };
     default:
       return state;
