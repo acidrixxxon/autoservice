@@ -1,9 +1,20 @@
 import React from 'react'
 import styles from './Sidefilters.module.scss'
 import { CSSTransition } from 'react-transition-group'
+import { useDispatch } from 'react-redux'
+import { SET__FILTERS } from '../../../redux/constants/ProductConstans'
 
-const SidefiltersItem = ({title,variants}) => {
+const SidefiltersItem = ({title,variants,idname}) => {
     const [ showVariants,setShowVariants ] = React.useState(false)
+    const [ activeCheckbox,setActiveCheckbox ] = React.useState(false)
+
+    const dispatch = useDispatch()
+    const { products } = useSelector(state => state)
+    const { filters } = products
+
+    React.useEffect(() => {
+        // if (filters.new ===)
+    },[])
 
     const toggleHandler = () => {
         setShowVariants(!showVariants)
@@ -32,7 +43,7 @@ const SidefiltersItem = ({title,variants}) => {
                 {variants.map((item,index) => (
                     <li key={index}>
                         <span className={styles.sidefilters__checkbox}>
-                            <input type="checkbox" />
+                            <input type="checkbox" onClick={() => dispatch({type: SET__FILTERS,payload: {idname,value: item}})} />
                             </span>
                         <span className={styles.sidefilters__text}>
                             {item}

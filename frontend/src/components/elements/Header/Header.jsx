@@ -17,6 +17,7 @@ const Header = () => {
 
                 <div className={styles.header__rightBlock}>
                     <div className={styles.header__topBar}>
+                        
                         <div className={styles.header__searchBlock}>
                             <input type="search" />
                             <button>
@@ -26,6 +27,7 @@ const Header = () => {
                                 </svg>
                             </button>
                         </div>
+
                         <div className={styles.header__callbackBlock}>
                             <div className={styles.header__callbackBlock__number}>
                                 <span className={styles.header__phone}>8-800-123-45-67</span>
@@ -33,6 +35,7 @@ const Header = () => {
                             </div>
                             <Callback />
                         </div>
+                        
                         <div className={styles.header__hamburger} onClick={() => setShowNav(!showNav)}>
                             <div className={[styles.line,showNav ? styles.line1 : ''].join(' ')}></div>
                             <div className={[styles.line,showNav ? styles.line2 : ''].join(' ')}></div>

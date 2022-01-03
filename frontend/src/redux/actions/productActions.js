@@ -72,7 +72,7 @@ export const getProducts = (page = 1, limit = 10) => {
 //   };
 
 export const searchProducts =
-  (query, page = 1, limit = 6) =>
+  (query, page = 1, limit = 8) =>
   async (dispatch) => {
     try {
       dispatch({ type: SEARCH__PRODUCT_REQUEST });

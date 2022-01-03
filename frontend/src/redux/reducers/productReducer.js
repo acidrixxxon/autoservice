@@ -3,15 +3,17 @@ import {
   SEARCH__PRODUCT_ERROR,
   SEARCH__PRODUCT_REQUEST,
   SEARCH__PRODUCT_SUCCESS,
+  SET__FILTERS,
 } from '../constants/ProductConstans';
 
 const initialState = {
   allProducts: [],
   loading: false,
   error: null,
-  productsPerPage: 6,
+  productsPerPage: 8,
   currentPage: 1,
   productsCount: 0,
+  filters: [],
 };
 
 export const productReducer = (state = initialState, action) => {
@@ -61,6 +63,7 @@ export const productReducer = (state = initialState, action) => {
     case SEARCH__PRODUCT_REQUEST:
       return {
         ...state,
+        allProducts: [],
         loading: true,
       };
     case SEARCH__PRODUCT_SUCCESS:
@@ -69,18 +72,24 @@ export const productReducer = (state = initialState, action) => {
         allProducts: action.payload.searchResults,
         productsCount: action.payload.productsCount,
         loading: false,
-        currentPage: 1,
       };
     case SEARCH__PRODUCT_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
+        allProducts: [],
       };
     case CLEAR__ERROR:
       return {
         ...state,
         error: null,
+      };
+    case SET__FILTERS:
+      return {
+        ...state,
+        filters: [...state.filters, action.payload],
+        allProducts: [...state.allProducts.filter((item) => item.new === action.payload.value)],
       };
     default:
       return state;

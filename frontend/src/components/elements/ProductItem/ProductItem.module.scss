@@ -1,14 +1,28 @@
+@import '../../../variables.scss';
+
 .product__item {
-  max-width: 260px;
-  flex-basis: 31%;
-  margin: 0 5px 10px;
+  flex-basis: 23%;
+  margin: 0 5px 35px;
   cursor: pointer;
+
+  @media (max-width: 1080px) {
+    flex-basis: 31%;
+  }
+  @media (max-width: $tabletScreen) {
+    flex-basis: 45%;
+  }
+
+  @media (max-width: 450px) {
+    flex-basis: 75%;
+  }
 
   .product__image {
     img {
       transition: all 0.25s ease-in-out;
       width: 100%;
       height: 200px;
+
+
     }
 
     &:hover img {

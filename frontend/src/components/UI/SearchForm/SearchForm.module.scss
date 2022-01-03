@@ -3,6 +3,10 @@
 .searchForm {
   display: flex;
   align-items: center;
+  
+  @media (max-width: $XS-Screen) {
+    justify-content: center;
+  }
 
   input {
     background: #f1f4f8;
@@ -20,6 +24,10 @@
     @media screen and (max-width: $tabletScreen) {
       width: calc(5rem + 20vw);
     }
+
+    @media screen and (max-width: $XS-Screen) {
+      width: 100%;
+    } 
   }
 
   a {

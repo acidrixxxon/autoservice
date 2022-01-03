@@ -66,7 +66,7 @@ const CatalogPage = () => {
                             exitDone: "sideExitDone"
                         }}
                     >
-                        <Sidefilters/>
+                        <Sidefilters filtersprops={[{ title: 'Состояние' ,variants: ['Новое','БУ'], name: 'new'}]}/>
                     </CSSTransition>
 
                      <div className="catalog-page__main-content">

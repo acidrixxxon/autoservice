@@ -1,11 +1,46 @@
 @import '../../assets/mixins.scss';
+@import '../../variables.scss';
 
 section#search {
   .search__container {
-    @include sectionContainer(1080px);
+    @include sectionContainer(1500px);
+    padding: 25px;
 
     .search__setts {
-      margin-top: 15px;
+    }
+
+    .search__main {
+      display: flex;
+      padding: 20px 0;
+
+      .search__main-sidebar {
+        flex-basis: 200px;
+        flex-shrink: 0;
+        margin-right: 20px;
+
+        @media (max-width: $tabletScreen) {
+          flex-basis: 170px;
+        }
+
+        @media (max-width: 730px) {
+          display: none;
+        }
+      }
+
+      .search__main-content {
+        padding: 10px 0px 30px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .search__main-products {
+          padding: 20px 0 30px;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%
+
+        }
+      }
     }
   }
 }

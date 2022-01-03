@@ -17,7 +17,7 @@ function App() {
         <Route path="/catalog" component={CatalogPage} exact />
         <Route path="/product/:id" component={ProductPage} exact />
         <Route path="/test" component={Testpage} exact />
-        <Route path="/search/mark=:query" component={SearchPage} exact />
+        <Route path="/search/query=:query" component={SearchPage} exact />
         <Route component={NotFound} />
       </Switch>
     </div>
